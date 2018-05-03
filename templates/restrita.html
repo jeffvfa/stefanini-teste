@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Landing Page - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="{{ url_for('static', filename='vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='vendor/simple-line-icons/css/simple-line-icons.css')}}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/landing-page.min.css')}}" rel="stylesheet">
+
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-light bg-light static-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Controle de ponto</a>
+        <a class="btn btn-primary" class="btn btn-primary" href="http://localhost:5000/sair">Sair</a>
+      </div>
+    </nav>
+
+    <!-- Icons Grid -->
+    <section class="features-icons bg-light text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <div class="features-icons-icon d-flex">
+                  <a href = http://localhost:5000/entrada>
+                  <i class="icon-login m-auto text-primary"></i></a>
+              </div>
+              <a href = http://localhost:5000/entrada><h3>Ponto entrada</h3></a>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <div class="features-icons-icon d-flex">
+                <a href = http://localhost:5000/saida><i class="icon-logout m-auto text-primary"></i></a>
+              </div>
+              <a href = http://localhost:5000/saida><h3>Ponto saída</h3></a>
+          </div>
+          </div>
+
+          <div class="col-lg-3">
+            <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+              <div class="features-icons-icon d-flex">
+                <a href = http://localhost:5000/almocosai><i class="icon-control-pause m-auto text-primary"></i></a>
+              </div>
+              <a href = http://localhost:5000/almocosai><h3>Pausa almoço</h3></a>
+            </div>
+        </div>
+            <div class="col-lg-3">
+              <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                <div class="features-icons-icon d-flex">
+                  <a href = http://localhost:5000/almocoent><i class="icon-control-play m-auto text-primary"></i></a>
+                </div>
+                <a href = http://localhost:5000/almocosai><h3>Volta do almoço</h3></a>
+              </div>
+          </div>
+
+      </div>
+  </div>
+    </section>
+
+
+
+    <section class="bg-light text-center" >
+                <div class="container">
+                <div class="table">
+                    <br>
+                    <h2>Ponto do funcionário</h2>
+                <table id="tabela" class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th class="mini">Dia</th>
+                            <th class="mini">Mês</th>
+                            <th class="mini">Ano</th>
+                            <th>Entrada</th>
+                            <th>Saída</th>
+                            <th>Entrada Almoço</th>
+                            <th>Saída almoço</th>
+                        </tr>
+                        <tr>
+                            <th><input type="text" id="txtColuna1"/></th>
+                            <th><input type="text" id="txtColuna2"/></th>
+                            <th><input type="text" id="txtColuna3"/></th>
+                            <th><input type="text" id="txtColuna4"/></th>
+                            <th><input type="text" id="txtColuna5"/></th>
+                            <th><input type="text" id="txtColuna6"/></th>
+                            <th><input type="text" id="txtColuna7"/></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in resultado[0] %}
+                       <tr>
+                            <td>{{ row[0] }}</td>
+                            <td>{{ row[1] }}</td>
+                            <td>{{ row[2] }}</td>
+                            <td>{{ row[3] }}</td>
+                            <td>{{ row[4] }}</td>
+                            <td>{{ row[5] }}</td>
+                            <td>{{ row[6] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+            <p class="text-muted small mb-4 mb-lg-0">&copy; Controle de ponto 2018. Todos os direitos reservados.</p>
+          </div>
+          <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item mr-3">
+                <a href="#">
+                  <i class="fa fa-facebook fa-2x fa-fw"></i>
+                </a>
+              </li>
+              <li class="list-inline-item mr-3">
+                <a href="#">
+                  <i class="fa fa-twitter fa-2x fa-fw"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fa fa-instagram fa-2x fa-fw"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    {% compress 'js' %}
+    <script type="text/javascript">
+        $(function(){
+            $("#tabela input").keyup(function(){
+                var index = $(this).parent().index();
+                var nth = "#tabela td:nth-child("+(index+1).toString()+")";
+                var valor = $(this).val().toUpperCase();
+                $("#tabela tbody tr").show();
+                $(nth).each(function(){
+                    if($(this).text().toUpperCase().indexOf(valor) < 0){
+                        $(this).parent().hide();
+                    }
+                });
+            });
+
+            $("#tabela input").blur(function(){
+                $(this).val("");
+            });
+        });
+    </script>
+{% endcompress %}
+  </head>
+  </body>
+
+</html>
